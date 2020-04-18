@@ -1,0 +1,36 @@
+{
+  "name": "m-o-d",
+  "version": "1.0.0",
+  "description": "mvp for hr",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --config webpack.config.js --watch",
+    "start": "nodemon server/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/my-name-is-nheo/hrr44-mvp.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/my-name-is-nheo/hrr44-mvp/issues"
+  },
+  "homepage": "https://github.com/my-name-is-nheo/hrr44-mvp#readme",
+  "devDependencies": {
+    "@babel/core": "^7.9.0",
+    "@babel/preset-env": "^7.9.5",
+    "@babel/preset-react": "^7.9.4",
+    "babel-loader": "^8.1.0",
+    "webpack": "^2.7.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "jquery": "^3.5.0",
+    "mysql": "^2.18.1",
+    "nodemon": "^2.0.3",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
+  }
+}
