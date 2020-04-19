@@ -1,13 +1,14 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import RecipeList from "./RecipeList.jsx";
+import NewRecipe from "./NewRecipe.jsx";
 import $ from "jquery";
 
 class RecipePage extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      test: "",
+      food: [],
+      toggleNew: false,
     };
   }
   componentDidMount() {
@@ -17,10 +18,14 @@ class RecipePage extends React.Component {
       success: (data) => {
         console.log(data);
         this.setState({
-          test: data,
+          food: data,
         });
       },
     });
+  }
+
+  toggle() {
+    this.setState({ toggleNew: !this.state.toggleNew });
   }
 
   render() {
@@ -29,12 +34,14 @@ class RecipePage extends React.Component {
         <div className="title">
           <h1>M.O.D</h1>
           <p>An amazing way to share simple recipes with friends and family</p>
-          <button className="addButton">Add New Recipe</button>
+          <button onClick={this.toggle.bind(this)} className="addButton">
+            Add New Recipe
+          </button>
         </div>
-
+        {this.state.toggleNew ? <NewRecipe /> : null}
         <div className="recipeList">
           <h2>Recipes</h2>
-          <RecipeList />
+          <RecipeList list={this.state.food} />
         </div>
       </div>
     );
