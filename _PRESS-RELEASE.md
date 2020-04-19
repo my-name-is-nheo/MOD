@@ -34,6 +34,7 @@ Once the project moves into development, the press release can be used as a touc
 ## Problem
 
 > Describe the problem your product solves.
+> You will never have to keep a physical copy of your recipes again!
 
 ## Solution
 
@@ -51,7 +52,7 @@ Once the project moves into development, the press release can be used as a touc
 ## Customer Quote
 
 > Provide a quote from a hypothetical customer that describes how they experienced the benefit.
-> "MoD is an amazing way to share traditional meals to your friends and family.
+> "MoD is an amazing way to share traditional meals with your friends and family.
 
 ## Closing and Call to Action
 

@@ -7,6 +7,10 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/getList", (req, res) => {
+  res.send("hello, your get request is working!");
+});
+
 app.listen(port, function (err) {
   if (err) {
     throw err;
