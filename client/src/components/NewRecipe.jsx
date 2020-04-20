@@ -3,19 +3,32 @@ class NewRecipe extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      recipe: [],
+      name: "",
+      description: "",
+      type: "",
       ingredients: [],
+      ingredientCount: 0,
+      price: "",
+      index: 0,
     };
   }
   addClick() {
     this.setState((prevState) => ({
-      ingredients: [...prevState.ingredients, ""],
+      ingredientCount: this.state.ingredientCount + 1,
     }));
   }
 
   createUI() {
-    return this.state.ingredients.map((i) => (
+    return new Array(this.state.ingredientCount).fill(0).map((vowl, i) => (
       <div key={i} className="newIngredient">
-        <input type="text" placeholder="Ingredient"></input>
+        <input
+          type="text"
+          placeholder="Ingredient"
+          onChange={(e) => {
+            this.addIngredient.bind(this, e, i)();
+          }}
+        ></input>
         <input
           type="button"
           value="remove"
@@ -25,10 +38,24 @@ class NewRecipe extends React.Component {
     ));
   }
   removeClick(i) {
-    let ingredients = [...this.state.ingredients];
-    ingredients.splice(i, 1);
-    this.setState({ ingredients });
+    let recipe = [...this.state.recipe];
+    recipe.splice(i, 1);
+    this.setState({ recipe });
   }
+  handleOnChange(e, key) {
+    console.log(e.target.id, e.target.value);
+    var oldState = {};
+    oldState[key] = e.target.value;
+    this.setState(oldState);
+  }
+  addIngredient(e, index) {
+    console.log(index);
+    console.log(e.target.value);
+    var old = this.state.ingredients;
+    old[index] = e.target.value;
+    this.setState({ ingredients: old });
+  }
+
   render() {
     return (
       <div>
@@ -36,18 +63,48 @@ class NewRecipe extends React.Component {
           <p>Add a New Recipe</p>
         </div>
         <div className="nameInput">
-          <input type="text" placeholder="Name of Food"></input>
+          <input
+            type="text"
+            placeholder="Name of Food"
+            id="name"
+            onChange={(e) => {
+              this.handleOnChange(e, "name");
+            }}
+          ></input>
         </div>
         <div className="descriptionInput">
-          <input type="text" placeholder="Description"></input>
+          <input
+            type="text"
+            placeholder="Description"
+            id="description"
+            onChange={(e) => {
+              this.handleOnChange(e, "description");
+            }}
+          ></input>
         </div>
-        <div className="ingredientInput">
-          <input type="text" placeholder="Ingredient"></input>
+        <div className="typeInput">
+          <input
+            type="text"
+            placeholder="Type"
+            id="type"
+            onChange={(e) => {
+              this.handleOnChange(e, "type");
+            }}
+          ></input>
         </div>
+
         {this.createUI()}
         <div className="priceInput">
-          <input type="number" placeholder="$"></input>
+          <input
+            type="number"
+            placeholder="$"
+            id="money"
+            onChange={(e) => {
+              this.handleOnChange(e, "price");
+            }}
+          ></input>
         </div>
+
         <div className="addIngredientButton">
           <button onClick={this.addClick.bind(this)}>Add Ingredient</button>
           <button className="saveButton"> Save</button>
