@@ -14,7 +14,7 @@ class NewRecipe extends React.Component {
 
   createUI() {
     return this.state.ingredients.map((i) => (
-      <div key={i}>
+      <div key={i} className="newIngredient">
         <input type="text" placeholder="Ingredient"></input>
         <input
           type="button"
@@ -32,8 +32,9 @@ class NewRecipe extends React.Component {
   render() {
     return (
       <div>
-        <h3>Add a New Recipe</h3>
-
+        <div className="newRecipeDiv">
+          <p>Add a New Recipe</p>
+        </div>
         <div className="nameInput">
           <input type="text" placeholder="Name of Food"></input>
         </div>
@@ -45,7 +46,7 @@ class NewRecipe extends React.Component {
         </div>
         {this.createUI()}
         <div className="priceInput">
-          <input type="number"></input>
+          <input type="number" placeholder="$"></input>
         </div>
         <div className="addIngredientButton">
           <button onClick={this.addClick.bind(this)}>Add Ingredient</button>

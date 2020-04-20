@@ -4,7 +4,7 @@ const FoodHandler = {
   getFood: (req, res, next) => {
     console.log("heres food!");
     model.foods.getRecipe((data) => {
-      res.json(data);
+      res.send(data);
     });
   },
 };
