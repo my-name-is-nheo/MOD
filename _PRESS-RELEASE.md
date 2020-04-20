@@ -39,10 +39,12 @@ Once the project moves into development, the press release can be used as a touc
 ## Solution
 
 > Describe how your product elegantly solves the problem.
+> It's simple. will be mobile friend eventually.
 
 ## Quote from You
 
 > A quote from a spokesperson in your company.
+> "MoD is a simply and convenient app to share your own recipes"
 
 ## How to Get Started
 

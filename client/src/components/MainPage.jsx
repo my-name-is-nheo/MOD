@@ -14,7 +14,7 @@ class RecipePage extends React.Component {
   componentDidMount() {
     $.ajax({
       type: "GET",
-      url: "/getList",
+      url: "/api/recipes",
       success: (data) => {
         console.log(data);
         this.setState({

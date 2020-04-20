@@ -1,4 +1,5 @@
 import React from "react";
+import $ from "jquery";
 class NewRecipe extends React.Component {
   constructor(props) {
     super(props);
@@ -56,6 +57,25 @@ class NewRecipe extends React.Component {
     this.setState({ ingredients: old });
   }
 
+  saveToRecipe() {
+    var newArray = [
+      this.state.name,
+      this.state.description,
+      this.state.type,
+      this.state.ingredients,
+      this.state.price,
+    ];
+
+    $.ajax({
+      type: "POST",
+      url: "api/recipes",
+      data: { newRecipe: newArray },
+      success: (data) => {
+        console.log("successfully sent post method: ", data);
+      },
+    });
+  }
+
   render() {
     return (
       <div>
@@ -107,7 +127,9 @@ class NewRecipe extends React.Component {
 
         <div className="addIngredientButton">
           <button onClick={this.addClick.bind(this)}>Add Ingredient</button>
-          <button className="saveButton"> Save</button>
+          <button className="saveButton" onClick={this.saveToRecipe.bind(this)}>
+            Save
+          </button>
         </div>
       </div>
     );

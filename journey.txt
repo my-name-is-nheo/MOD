@@ -1,0 +1,1 @@
+ insert into recipeList(food_name,food_description,ingredients,type) values ("Affogato", "Coffee with ice cream!", '["coffee","vanilla ice cream"]', "Desserts");
