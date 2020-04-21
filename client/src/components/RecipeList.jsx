@@ -13,11 +13,6 @@ const RecipeList = (props) => {
             <th>Name of Dish</th>
           </tr>
           {props.list.map((food, id) => {
-            // console.log("this is props: ", props);
-            // console.log(
-            //   JSON.parse(food.ingredients),
-            //   typeof JSON.parse(food.ingredients)
-            // ); //parse it when you
             return (
               <tr key={id}>
                 <td>
