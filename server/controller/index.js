@@ -12,7 +12,7 @@ const FoodHandler = {
 
     var payload = req.body.newRecipe;
     payload[payload.length - 1] = JSON.stringify(payload[payload.length - 1]);
-    console.log("this is payload", payload);
+    console.log("it's payload; ", payload);
     model.foods.addRecipe(payload, (data) => {
       console.log(data);
       res.send(data);
