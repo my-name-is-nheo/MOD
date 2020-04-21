@@ -5,7 +5,7 @@ const mysql = require("mysql");
 //   database: "recipe_mvp",
 // });
 try {
-  var dbConnection = mysql.createConnection({
+  var dbPool = mysql.createPool({
     host: "us-cdbr-iron-east-01.cleardb.net",
     user: "b888a0a1cb3005",
     password: "7fe08e8c",
@@ -15,5 +15,5 @@ try {
   console.log("create connection error ", e);
 }
 
-dbConnection.connect();
-module.exports = dbConnection;
+// dbConnection.connect();
+module.exports = dbPool;
