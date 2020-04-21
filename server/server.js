@@ -6,7 +6,7 @@ const path = require("path");
 const FoodHandler = require("./controller/index.js");
 const db = require("../db/index.js");
 app.use(cors());
-app.use(express.static(path.join(__dirname, "../client/dist")));
+app.use(express.static(path.join(__dirname, "../client/dist/index.html")));
 app.use(express.urlencoded({ extended: true }));
 
 app.get("/api/recipes/", FoodHandler.getFood);
