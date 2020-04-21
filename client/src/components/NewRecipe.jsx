@@ -39,9 +39,12 @@ class NewRecipe extends React.Component {
     ));
   }
   removeClick(i) {
-    let recipe = [...this.state.recipe];
-    recipe.splice(i, 1);
-    this.setState({ recipe });
+    let old = [...this.state.ingredients];
+    old.splice(this.state.ingredientCount - 1, 1);
+    this.setState({
+      ingredients: old,
+      ingredientCount: this.state.ingredientCount - 1,
+    });
   }
   handleOnChange(e, key) {
     console.log(e.target.id, e.target.value);
