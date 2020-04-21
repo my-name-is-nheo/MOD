@@ -2,6 +2,7 @@ import React, { useState } from "react";
 const moment = require("moment");
 const RecipeList = (props) => {
   const [showRecipe, setShowRecipe] = React.useState(false);
+  // const [selectRecipe, setSelectedRecipe] = React.useState("");
 
   return (
     <>
@@ -21,8 +22,10 @@ const RecipeList = (props) => {
                 <td>
                   <button
                     className="foodButtonList"
-                    onClick={() => {
-                      setShowRecipe(!showRecipe);
+                    onClick={(id) => {
+                      console.log(id);
+                      setShowRecipe(food);
+                      // setSelectedRecipe(id);
                     }}
                   >
                     {food.food_name}
@@ -35,25 +38,28 @@ const RecipeList = (props) => {
       </table>
       {showRecipe ? (
         <div className="foodList">
-          {props.list.map((food, id) => {
-            return (
-              <div key={id}>
-                <h3>{food.food_name}</h3>
-                <h4>Ingredients</h4>
-                <ul>
-                  {JSON.parse(food.ingredients).map((ing, id) => {
-                    return <li key={id}>{ing}</li>;
-                  })}
-                </ul>
-                <h4>Description</h4>
-                <p>{food.food_description}</p>
-                <h4>Meal Type</h4>
-                <p>{food.type}</p>
-                <h4>Total Cost</h4>
-                <p>${food.price}</p>
-              </div>
-            );
-          })}
+          <div>
+            <h3>{showRecipe.food_name}</h3>
+            <h4>Ingredients</h4>
+            <ul>
+              {JSON.parse(showRecipe.ingredients).map((ing, id) => {
+                return <li key={id}>{ing}</li>;
+              })}
+            </ul>
+            <h4>Description</h4>
+            <ul>
+              <li>{showRecipe.food_description}</li>
+            </ul>
+            <h4>Meal Type</h4>
+            <ul>
+              <p>{showRecipe.type}</p>
+            </ul>
+            <h4>Total Cost</h4>
+            <ul>
+              <p>${showRecipe.price}</p>
+            </ul>
+            <button>X</button>
+          </div>
         </div>
       ) : (
         ""
@@ -63,6 +69,3 @@ const RecipeList = (props) => {
 };
 
 export default RecipeList;
-/*var array = food.ingredients
-.substring(1, food.ingredients.length - 1)
-.split(",");*/
