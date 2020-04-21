@@ -75,6 +75,7 @@ class NewRecipe extends React.Component {
       data: { newRecipe: newArray },
       success: (data) => {
         console.log("successfully sent post method: ", data);
+        res.send(data);
         window.location.reload();
       },
     });
