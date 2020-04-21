@@ -7,14 +7,14 @@ const FoodHandler = require("./controller/index.js");
 const db = require("../db/index.js");
 app.use(cors());
 //for local
-// app.use(express.static(path.join(__dirname, "../client/dist/")));
+app.use(express.static(path.join(__dirname, "../client/dist/")));
 //for heroku
-app.use(express.static(path.join(__dirname, "../client/dist/index.html")));
+// app.use(express.static(path.join(__dirname, "../client/dist/index.html")));
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/api/recipes/", FoodHandler.getFood);
+app.get("/api/recipes", FoodHandler.getFood);
 
-app.post("/api/recipes/", FoodHandler.addFood);
+app.post("/api/recipes", FoodHandler.addFood);
 
 app.delete("/api/recipes/:id", function (req, res) {
   console.log("delete request received from cilent");
