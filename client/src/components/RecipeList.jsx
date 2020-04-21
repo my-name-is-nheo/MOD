@@ -59,6 +59,7 @@ const RecipeList = (props) => {
               <p>${showRecipe.price}</p>
             </ul>
             <button
+              className="closeButton"
               onClick={() => {
                 var url_id = showRecipe.id;
                 $.ajax({
@@ -66,6 +67,7 @@ const RecipeList = (props) => {
                   type: "DELETE",
                   success: () => {
                     console.log("success deleted from mySQL");
+                    window.location.reload();
                   },
                 });
               }}
