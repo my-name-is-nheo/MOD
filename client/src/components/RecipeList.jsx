@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-const moment = require("moment");
+import $ from "jquery";
+
 const RecipeList = (props) => {
   const [showRecipe, setShowRecipe] = React.useState(false);
   // const [selectRecipe, setSelectedRecipe] = React.useState("");
@@ -12,18 +13,17 @@ const RecipeList = (props) => {
             <th>Name of Dish</th>
           </tr>
           {props.list.map((food, id) => {
-            console.log("this is props: ", props);
-            console.log(
-              JSON.parse(food.ingredients),
-              typeof JSON.parse(food.ingredients)
-            ); //parse it when you
+            // console.log("this is props: ", props);
+            // console.log(
+            //   JSON.parse(food.ingredients),
+            //   typeof JSON.parse(food.ingredients)
+            // ); //parse it when you
             return (
               <tr key={id}>
                 <td>
                   <button
                     className="foodButtonList"
                     onClick={(id) => {
-                      console.log(id);
                       setShowRecipe(food);
                       // setSelectedRecipe(id);
                     }}
@@ -58,7 +58,20 @@ const RecipeList = (props) => {
             <ul>
               <p>${showRecipe.price}</p>
             </ul>
-            <button>X</button>
+            <button
+              onClick={() => {
+                var url_id = showRecipe.id;
+                $.ajax({
+                  url: "api/recipes/" + url_id,
+                  type: "DELETE",
+                  success: () => {
+                    console.log("success deleted from mySQL");
+                  },
+                });
+              }}
+            >
+              X
+            </button>
           </div>
         </div>
       ) : (

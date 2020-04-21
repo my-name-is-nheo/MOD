@@ -12,6 +12,10 @@ app.get("/api/recipes", FoodHandler.getFood);
 
 app.post("/api/recipes", FoodHandler.addFood);
 
+app.delete("/api/recipes/:id", function (req, res) {
+  console.log("delete request received from cilent");
+});
+
 app.listen(port, function (err) {
   if (err) {
     throw err;
