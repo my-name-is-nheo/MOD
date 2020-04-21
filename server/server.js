@@ -6,6 +6,9 @@ const path = require("path");
 const FoodHandler = require("./controller/index.js");
 const db = require("../db/index.js");
 app.use(cors());
+//for local
+// app.use(express.static(path.join(__dirname, "../client/dist/")));
+//for heroku
 app.use(express.static(path.join(__dirname, "../client/dist/index.html")));
 app.use(express.urlencoded({ extended: true }));
 
