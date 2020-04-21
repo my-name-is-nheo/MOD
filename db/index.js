@@ -6,6 +6,7 @@ const mysql = require("mysql");
 // });
 try {
   var dbPool = mysql.createPool({
+    connectionLimit: 10,
     host: "us-cdbr-iron-east-01.cleardb.net",
     user: "b888a0a1cb3005",
     password: "7fe08e8c",
