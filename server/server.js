@@ -27,7 +27,7 @@ app.delete("/api/recipes/:id", function (req, res) {
 app.listen(port, function (err) {
   if (err) {
     throw err;
-    console.log("app.listen", err);
+    console.log("app.listen is throwing", err);
   }
   console.log(`listening on port ${port}!`);
 });

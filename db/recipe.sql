@@ -9,6 +9,6 @@ CREATE TABLE recipeList (
   food_description VARCHAR(300) NOT NULL,
   type VARCHAR(10) NOT NULL,
   price INTEGER,
-  ingredients JSON ,
+  ingredients text,
   PRIMARY KEY (id)
 );
