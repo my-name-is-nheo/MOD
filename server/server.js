@@ -23,6 +23,9 @@ app.delete("/api/recipes/:id", function (req, res) {
     res.send("recipe has been deleted!");
   });
 });
+app.get("/app.js", cors(), async (req, res) => {
+  res.sendFile(path.join(__dirname, "../client/dist/bundle.js"));
+});
 
 app.listen(port, function (err) {
   if (err) {
