@@ -9,9 +9,9 @@ app.use(cors());
 app.use(express.static(path.join(__dirname, "../client/dist")));
 app.use(express.urlencoded({ extended: true }));
 
-app.get("/api/recipes", FoodHandler.getFood);
+app.get("/api/recipes/", FoodHandler.getFood);
 
-app.post("/api/recipes", FoodHandler.addFood);
+app.post("/api/recipes/", FoodHandler.addFood);
 
 app.delete("/api/recipes/:id", function (req, res) {
   console.log("delete request received from cilent");
@@ -22,9 +22,6 @@ app.delete("/api/recipes/:id", function (req, res) {
     }
     res.send("recipe has been deleted!");
   });
-});
-app.get("/app.js", cors(), async (req, res) => {
-  res.sendFile(path.join(__dirname, "../client/dist/bundle.js"));
 });
 
 app.listen(port, function (err) {

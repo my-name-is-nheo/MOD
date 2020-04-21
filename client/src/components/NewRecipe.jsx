@@ -71,7 +71,7 @@ class NewRecipe extends React.Component {
 
     $.ajax({
       type: "POST",
-      url: "api/recipes",
+      url: "/api/recipes",
       data: { newRecipe: newArray },
       success: (data) => {
         console.log("successfully sent post method: ", data);

@@ -58,7 +58,7 @@ const RecipeList = (props) => {
               onClick={() => {
                 var url_id = showRecipe.id;
                 $.ajax({
-                  url: "api/recipes/" + url_id,
+                  url: "/api/recipes/" + url_id,
                   type: "DELETE",
                   success: () => {
                     console.log("success deleted from mySQL");
