@@ -1,21 +1,22 @@
 const mysql = require("mysql");
 
+// mysql://b3aa93e954fa25:ec1cb49a@us-cdbr-iron-east-01.cleardb.net/heroku_d0711f977976817?reconnect=true
 try {
   var dbPool = mysql.createPool({
     connectionLimit: 10,
-    host: "us-cdbr-iron-east-01.cleardb.net",
-    user: "b039ba6d119e9c",
-    password: "4177f229",
-    database: "heroku_2341fb153f62c79",
+    host: "us-cdbr-east-05.cleardb.net",
+    user: "bea296e3b1a5fc",
+    password: "109bde57",
+    database: "heroku_272f5ee65b2a953",
   });
 } catch (e) {
-  console.log("create connection error ", e);
+  console.log("mysql create connection error: ", e);
 }
-module.exports = dbPool;
 
-// var dbConnection = mysql.createConnection({
-//   user: "root",
-//   database: "recipe_mvp",
+// dbPool.connect(function (err) {
+//   if (err) {
+//     console.log("failed to connect to db: ", err);
+//   }
 // });
-// dbConnection.connect();
-// module.exports = dbConnection;
+
+module.exports = dbPool;

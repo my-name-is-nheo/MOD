@@ -30,7 +30,7 @@ CREATE TABLE `recipeList` (
   `price` int(11) DEFAULT NULL,
   `ingredients` text,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -39,7 +39,7 @@ CREATE TABLE `recipeList` (
 
 LOCK TABLES `recipeList` WRITE;
 /*!40000 ALTER TABLE `recipeList` DISABLE KEYS */;
-INSERT INTO `recipeList` VALUES (3,'affogato','coffee with ice cream','dessert',6,'[\"coffee of choice\",\"ice cream\"]'),(4,'breakfast wrap','you can have this any day','all day',8,'[\"eggs\",\"bacon\",\"whole grain tortilla\",\"advocado\",\"sharp cheddar cheese\",\"salt and pepper\",\"hot sauce (chalula)\"]');
+INSERT INTO `recipeList` VALUES (4,'breakfast wrap','you can have this any day','all day',8,'[\"eggs\",\"bacon\",\"whole grain tortilla\",\"advocado\",\"sharp cheddar cheese\",\"salt and pepper\",\"hot sauce (chalula)\"]'),(13,'Carbonara','100% would make again','Dinner',8,'[\"sphaghetti\",\"parmesan\",\"eggs\",\"extra-virgin olive oil\",\"1lb of bacon\"]'),(14,'Affogato','coffee with ice cream','dessert',6,'[\"vanilla ice cream (Häagen-Dazs preferred)\",\"coffee of choice\"]'),(15,'Peanut Butter and Jelly Sandwich','its a sandwich','All-day',3,'[\"peanut butter\",\"jelly ( grape preferred)\",\"bread\"]');
 /*!40000 ALTER TABLE `recipeList` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -52,4 +52,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-04-21  3:46:26
+-- Dump completed on 2020-06-08 22:10:30
