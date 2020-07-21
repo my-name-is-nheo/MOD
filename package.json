@@ -1,7 +1,7 @@
 {
   "name": "m-o-d",
   "version": "1.0.0",
-  "description": "mvp for hr",
+  "description": "mvp",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.js",
