@@ -10,12 +10,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/my-name-is-nheo/hrr44-mvp.git"
+    "url": "git+https://github.com/my-name-is-nheo/MOD.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/my-name-is-nheo/hrr44-mvp/issues"
+    "url": "https://github.com/my-name-is-nheo/MOD.git/issues"
   },
   "homepage": "https://github.com/my-name-is-nheo/hrr44-mvp#readme",
   "devDependencies": {
