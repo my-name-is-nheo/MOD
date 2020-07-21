@@ -17,7 +17,7 @@
   "bugs": {
     "url": "https://github.com/my-name-is-nheo/MOD.git/issues"
   },
-  "homepage": "https://github.com/my-name-is-nheo/hrr44-mvp#readme",
+  "homepage": "https://github.com/my-name-is-nheo/MOD#readme",
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/preset-env": "^7.9.5",
